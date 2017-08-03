@@ -1,0 +1,19 @@
+{
+  "name": "pagoru.es",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "restart": "nodemon index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "less-middleware": "^2.2.1",
+    "pug": "^2.0.0-rc.3",
+    "super-secret-settings": "^1.0.1"
+  }
+}

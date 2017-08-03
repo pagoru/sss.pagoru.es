@@ -1,0 +1,22 @@
+html
+    head
+        meta#viewport(name="viewport" content="width=320; user-scalable=no; initial-scale=0.5;")
+        link(rel='stylesheet' href='/sss/css/style.css')
+        link#favicon(rel='shortcut icon' type="image/png" href='https://robohash.org/Bender')
+        title="Bender"
+
+    body
+        main
+            div.robot
+                label#hexadecimalSeed.noselect= "00000000"
+                div#bocata.bubble="click to copy"
+                div.inputs
+                    input#secret(placeholder="secret" type="password" autofocus)
+                    input#service(placeholder="service")
+                img#robotRock(src="https://robohash.org/Bender" onclick="")
+                button#password.password(data-clipboard-action="copy" data-clipboard-text="")
+
+        footer
+            script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+            script(src="/sss/js/clipboard.min.js")
+            script(src="/sss/js/scripts.js")
