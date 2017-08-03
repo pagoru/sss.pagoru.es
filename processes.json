@@ -2,7 +2,7 @@
   "name": "pagoru.es",
   "script": "index.js",
   "watch": true,
-  "ignore_watch": [".git", ".idea", "node_modules"],
+  "ignore_watch": [".git", ".idea", "node_modules", "public"],
   "watch_options": {
     "followSymlinks": false
   }
