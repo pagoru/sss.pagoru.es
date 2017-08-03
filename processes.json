@@ -1,0 +1,9 @@
+{
+  "name": "pagoru.es",
+  "script": "index.js",
+  "watch": true,
+  "ignore_watch": [".git", ".idea", "node_modules"],
+  "watch_options": {
+    "followSymlinks": false
+  }
+}
