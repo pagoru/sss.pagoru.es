@@ -53,7 +53,7 @@ export default class Application extends React.Component<{}, {}> {
                     <label id="hexadecimalSeed" className="noselect">{this.state['hash']}</label>
                 </div>
                 <CopyToClipboard text={this.state['password']}>
-                    <img id="robotRock" src={qr_url2 + parseInt(this.state['hash'])}/>
+                    <img id="robotRock" src={qr_url2 + parseInt(this.state['hash'], 16)}/>
                 </CopyToClipboard>
             </div>
         );

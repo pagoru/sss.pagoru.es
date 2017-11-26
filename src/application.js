@@ -16,7 +16,7 @@ var SuperSecretSettings = require("super-secret-settings");
 require("./index.less");
 var qr_url = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
 var qr_url2 = 'https://loremflickr.com/500/500?lock=';
-var Application = (function (_super) {
+var Application = /** @class */ (function (_super) {
     __extends(Application, _super);
     function Application() {
         var _this = _super.call(this, {}) || this;
@@ -53,7 +53,7 @@ var Application = (function (_super) {
                 React.createElement("div", null),
                 React.createElement("label", { id: "hexadecimalSeed", className: "noselect" }, this.state['hash'])),
             React.createElement(react_copy_to_clipboard_1.CopyToClipboard, { text: this.state['password'] },
-                React.createElement("img", { id: "robotRock", src: qr_url2 + parseInt(this.state['hash']) }))));
+                React.createElement("img", { id: "robotRock", src: qr_url2 + parseInt(this.state['hash'], 16) }))));
     };
     return Application;
 }(React.Component));
