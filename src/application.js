@@ -18,8 +18,8 @@ var qr_url = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
 var qr_url2 = 'https://loremflickr.com/500/500?lock=';
 var Application = /** @class */ (function (_super) {
     __extends(Application, _super);
-    function Application() {
-        var _this = _super.call(this) || this;
+    function Application(props, context) {
+        var _this = _super.call(this, props, context) || this;
         _this.state = {
             service: '',
             hash: '00000000',

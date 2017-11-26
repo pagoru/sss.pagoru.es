@@ -11,8 +11,8 @@ const qr_url2 = 'https://loremflickr.com/500/500?lock=';
 
 export default class Application extends React.Component<{}, {}> {
 
-    constructor(){
-        super();
+    constructor(props, context?: any){
+        super(props, context);
 
         this.state = {
             service: '',
