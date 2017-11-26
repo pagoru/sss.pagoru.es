@@ -1,19 +1,28 @@
 {
-  "name": "pagoru.es",
-  "version": "1.0.0",
+  "name": "react-with-typescript",
+  "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.tsx",
   "scripts": {
-    "start": "node index.js",
-    "restart": "nodemon index.js"
+    "build": "./node_modules/.bin/webpack",
+    "start": "./node_modules/.bin/webpack-dev-server --inline --hot --history-api-fallback --open --content-base ./public"
   },
-  "author": "",
+  "author": "darkaqua",
   "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.0.25",
+    "@types/react-dom": "^16.0.3",
+    "awesome-typescript-loader": "^3.4.0",
+    "css-loader": "^0.28.7",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.19.0",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "less-middleware": "^2.2.1",
-    "pug": "^2.0.0-rc.3",
-    "super-secret-settings": "^1.0.1"
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
   }
 }

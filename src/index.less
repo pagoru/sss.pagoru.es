@@ -1,5 +1,5 @@
 
-@robot-size: 600px;
+@robot-size: 300px;
 
 body, a, input, label, p {
   font-family: monospace;
@@ -13,19 +13,18 @@ button {
   cursor: pointer;
 }
 input {
-  float: left;
   padding: 4px;
   border: 0;
-  width: @robot-size/2 - 2px;
+  width: ~'calc(100% - 8px);';
 }
 #hexadecimalSeed {
-  color: white;
-  text-shadow: 0 0 4px #000;
+  color: black;
   font-weight: 900;
   padding: 4px;
   position: absolute;
-  bottom: (@robot-size/300)*20;
+  z-index: 999;
   right: 0;
+  bottom: 0;
 }
 #password {
   position: absolute;
@@ -41,8 +40,9 @@ input {
   height: @robot-size;
   width: @robot-size;
   position: absolute;
-  bottom: ~'calc(50% - '(@robot-size/2)~')';
+  top: ~'calc(50% - '(@robot-size/2)~')';
   left: ~'calc(50% - '(@robot-size/2)~')';
+  cursor: pointer;
 }
 
 @media (max-width: 640px) {
@@ -53,19 +53,15 @@ input {
 
 img {
   height: @robot-size;
+  position: absolute;
+  left: ~'calc(50% - 150px)';
+  bottom: 40px;
 }
 .inputs {
   position: absolute;
   bottom: 0;
   z-index: 999;
 }
-#service {
-  float: right;
-}
-#secret{
-  margin-right: 4px;
-}
-
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
