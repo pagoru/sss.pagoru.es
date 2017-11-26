@@ -19,7 +19,7 @@ var qr_url2 = 'https://loremflickr.com/500/500?lock=';
 var Application = /** @class */ (function (_super) {
     __extends(Application, _super);
     function Application() {
-        var _this = _super.call(this, {}, {}) || this;
+        var _this = _super.call(this) || this;
         _this.state = {
             service: '',
             hash: '00000000',
