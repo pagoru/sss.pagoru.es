@@ -2,12 +2,13 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-import * as SuperSecretSettings from 'super-secret-settings';
+import { getHash, getPassword } from 'super-secret-settings';
 
 import './index.less'
 
 const qr_url = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
 const qr_url2 = 'https://loremflickr.com/500/500?lock=';
+const qr_static = 'https://instagram.fmad7-1.fna.fbcdn.net/vp/40e87239ca4b09b3d13fe05a553df631/5B65842E/t51.2885-15/e35/30602671_269685373571513_4681094377852895232_n.jpg';
 
 export default class Application extends React.Component<{}, {}> {
 
@@ -15,6 +16,7 @@ export default class Application extends React.Component<{}, {}> {
         super(props, context);
 
         this.state = {
+            secret: '',
             service: '',
             hash: '00000000',
             password: ''
@@ -25,19 +27,20 @@ export default class Application extends React.Component<{}, {}> {
     }
 
     onChangeSecret(event: any) {
-        const sss = new SuperSecretSettings({ masterPassword: event.target.value });
+        const secret = event.target.value;
         this.setState({
-            sss: new SuperSecretSettings({ masterPassword: event.target.value }),
-            hash: sss.getMasterPasswordHash().substr(0, 8),
-            password: sss.generatePassword({ serviceName: this.state['service'] })
+            secret: secret,
+            hash: getHash(secret).substr(0, 8),
+            password: getPassword(secret, this.state['service'])
         });
     }
 
     onChangeService(event: any) {
+        const service = event.target.value;
         this.setState({
-            service: event.target.value,
-            hash: this.state['sss'].getMasterPasswordHash().substr(0, 8),
-            password: this.state['sss'].generatePassword({ serviceName: event.target.value })
+            service: service,
+            hash: getHash(this.state['secret']).substr(0, 8),
+            password: getPassword(this.state['secret'], service)
         });
     }
 
@@ -53,7 +56,7 @@ export default class Application extends React.Component<{}, {}> {
                     <label id="hexadecimalSeed" className="noselect">{this.state['hash']}</label>
                 </div>
                 <CopyToClipboard text={this.state['password']}>
-                    <img id="robotRock" src={qr_url2 + parseInt(this.state['hash'], 16)}/>
+                    <img id="robotRock" src={qr_static}/>
                 </CopyToClipboard>
             </div>
         );
