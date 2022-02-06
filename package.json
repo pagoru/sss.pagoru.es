@@ -1,31 +1,32 @@
 {
   "name": "sss.pagoru.es",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "src/index.tsx",
   "scripts": {
     "build": "./node_modules/.bin/webpack -p",
-    "start": "./node_modules/.bin/webpack-dev-server --inline --hot --history-api-fallback --open --content-base ./public"
+    "start_": "./node_modules/.bin/webpack-dev-server --hot --history-api-fallback --open --content-base ./public",
+    "start": "npx webpack serve --mode development"
   },
   "author": "pablo",
   "license": "MIT",
   "devDependencies": {
-    "@types/react": "^16.3.11",
-    "@types/react-dom": "^16.0.5",
-    "awesome-typescript-loader": "^3.5.0",
-    "css-loader": "^0.28.11",
-    "less": "^2.7.3",
+    "@types/react": "^17.0.30",
+    "@types/react-dom": "^17.0.9",
+    "css-loader": "^6.4.0",
     "less-loader": "^4.1.0",
-    "qrcode": "^1.2.0",
-    "react-copy-to-clipboard": "^5.0.1",
-    "style-loader": "^0.19.1",
-    "super-secret-settings": "^3.0.2",
-    "typescript": "^2.8.1",
-    "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.2"
+    "style-loader": "^3.3.0",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "buffer": "^6.0.3",
+    "random-seed": "^0.3.0",
+    "react": "^17.0.2",
+    "react-copy-to-clipboard": "^5.0.4",
+    "react-dom": "^17.0.2",
+    "super-secret-settings": "file:../super-secret-settings"
   }
 }
