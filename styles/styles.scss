@@ -1,0 +1,91 @@
+
+:root {
+    --color-canvas-default-transparent: rgba(255,255,255,0);
+    --color-prettylights-syntax-comment: #6e7781;
+    --color-prettylights-syntax-constant: #0550ae;
+    --color-prettylights-syntax-entity: #8250df;
+    --color-prettylights-syntax-storage-modifier-import: #24292f;
+    --color-prettylights-syntax-entity-tag: #116329;
+    --color-prettylights-syntax-keyword: #cf222e;
+    --color-prettylights-syntax-string: #0a3069;
+    --color-prettylights-syntax-variable: #953800;
+    --color-prettylights-syntax-string-regexp: #116329;
+    --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+    --color-fg-default: #24292f;
+    --color-fg-default-almost: #24292e;
+    --color-fg-muted: #57606a;
+    --color-canvas-default: #fff;
+    --color-canvas-subtle: #f6f8fa;
+    --color-border-default: #d0d7de;
+    --color-border-muted: #d8dee4;
+    --color-neutral-muted: rgba(175,184,193,.2);
+    --color-accent-fg: #0969da;
+    --color-accent-emphasis: #0969da;
+    --color-danger-fg: #cf222e;
+}
+
+* {
+    font-size: 20px;
+}
+html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    font-family: ui-sans-serif,system-ui,sans-serif;
+
+    body {
+        margin: 0;
+        background-color: var(--color-border-muted);
+        color: var(--color-fg-default);
+        transition: background-color 100ms linear;
+
+        .body-mesh {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2em 1em;
+            align-items: center;
+            align-content: center;
+            max-width: 800px;
+            margin: auto;
+            height: 100%;
+
+            h4 {
+                width: 100%;
+                text-align: center;
+            }
+
+            .form {
+                display: flex;
+                flex-wrap: wrap;
+                gap: .5em;
+                width: 100%;
+
+                .service-password {
+                    padding: .5em 1em;
+                    cursor: pointer;
+                    border-radius: .5em;
+                    width: 100%;
+                    text-align: center;
+                    color: var(--color-canvas-default);
+                    background-color: var(--color-fg-default);
+                }
+            }
+            input {
+                border: 0;
+                padding: .5em 1em;
+                width: 100%;
+                border-radius: .5em;
+                background-color: var(--color-canvas-default)
+            }
+        }
+    }
+}

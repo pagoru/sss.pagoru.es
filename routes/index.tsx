@@ -1,21 +1,23 @@
 /** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
-import Input from "../islands/Input.tsx";
+/** @jsxFrag Fragment */
+import { Fragment, h } from "preact";
+import {Handlers, PageProps} from "$fresh/src/server/types.ts";
+import Form from "../islands/Form.tsx";
 
-export default function Home() {
+
+export const handler: Handlers<any, { data: any }> = {
+  GET(_req, ctx) {
+    return ctx.render(ctx.state.data);
+  },
+};
+
+export default (props: PageProps) => {
   return (
-    <div class={tw`p-4 mx-auto max-w-screen-md`}>
-      <img
-        src="/logo.svg"
-        height="100px"
-        alt="the fresh logo: a sliced lemon dripping with juice"
-      />
-      <p class={tw`my-6`}>
-        Welcome to `fresh`. Try update this message in the ./routes/index.tsx
-        file, and refresh.
-      </p>
-      <Input />
-    </div>
+    <>
+      <h4>
+        Password Manager <i>#Classic</i>
+      </h4>
+      <Form/>
+    </>
   );
 }
