@@ -1,5 +1,11 @@
-# SSS
+# fresh project
 
-Password manager based on name hashes instead on storage 
+### Usage
 
-[Try the online version](https://sss.pagoru.es/)
+Start the project:
+
+```
+deno task start
+```
+
+This will watch the project directory and restart as necessary.
