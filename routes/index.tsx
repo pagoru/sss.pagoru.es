@@ -4,14 +4,7 @@ import { Fragment, h } from "preact";
 import {Handlers, PageProps} from "$fresh/src/server/types.ts";
 import Form from "../islands/Form.tsx";
 
-
-export const handler: Handlers<any, { data: any }> = {
-  GET(_req, ctx) {
-    return ctx.render(ctx.state.data);
-  },
-};
-
-export default (props: PageProps) => {
+export default () => {
   return (
     <>
       <h4>

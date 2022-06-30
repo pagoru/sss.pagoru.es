@@ -2,7 +2,17 @@
 /** @jsxFrag Fragment */
 import { Fragment, h } from "preact";
 import { Head } from "$fresh/runtime.ts";
-import { AppProps } from "$fresh/server.ts";
+import {AppProps, Handlers} from "$fresh/server.ts";
+
+
+export const handler: Handlers<any, { data: string }> = {
+  GET(_req, ctx) {
+    console.log('?')
+    
+    return ctx.render(ctx.state.data);
+  },
+};
+
 
 export default (props: AppProps) => {
   return (
