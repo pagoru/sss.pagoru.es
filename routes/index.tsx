@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
-import Input from "../islands/Input";
+import Input from "../islands/Input.tsx";
 
 export default function Home() {
   return (

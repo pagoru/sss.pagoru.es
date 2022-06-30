@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 
-export default (props) => {
+export default () => {
   
   return <span>asdad</span>;
 }
