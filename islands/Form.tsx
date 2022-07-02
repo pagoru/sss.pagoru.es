@@ -26,6 +26,7 @@ export default () => {
   return (
     <div className="form">
       <input
+        autofocus
         type="password"
         autoComplete="off"
         onKeyUp={onChangePassword}
