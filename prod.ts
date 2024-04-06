@@ -1,6 +1,5 @@
 import { serve } from "https://deno.land/std@0.181.0/http/server.ts";
 import * as path from "https://deno.land/std@0.181.0/path/mod.ts";
-import { requestMiddleware } from "./serve/request.middleware.ts";
 
 const currentBuildPath = path.join(await Deno.cwd(), "build/");
 
@@ -20,8 +19,6 @@ await serve(
       let indexFileText = await Deno.readTextFile(
         currentBuildPath + "index.html",
       );
-
-      indexFileText = await requestMiddleware(url, filepath, indexFileText);
 
       return new Response(indexFileText, {
         headers: {
