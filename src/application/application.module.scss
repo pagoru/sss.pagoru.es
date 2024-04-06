@@ -7,6 +7,9 @@
     align-items: center;
     flex-direction: column;
 
+    span {
+        margin: 0 2rem;
+    }
     span, span * {
         font-size: 1.2rem;
     }
@@ -16,7 +19,7 @@
         flex-direction: column;
         border-radius: 2rem;
         padding: 1rem;
-        width: 60rem;
+        width: calc(min(60rem, 100%) - 2rem);
         gap: 1rem;
         margin: 1rem;
 
