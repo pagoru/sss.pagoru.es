@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "build": "deno run --allow-read --allow-write --allow-env --allow-run --allow-net build.ts ",
+    "start": "deno run --allow-read --allow-write --allow-env --allow-run --allow-net main.ts ",
+    "prod": "deno task build && deno run --allow-read --allow-write --allow-env --allow-run --allow-net prod.ts "
+  },
+  "imports": {
+    "deno/": "https://deno.land/std@0.207.0/",
+    "loadenv": "https://deno.land/x/loadenv@v1.0.1/mod.ts",
+    "deno_web_serve": "https://deno.land/x/deno_web_serve@v2.10.0/mod.ts"
+  },
+  "lock": false,
+  "nodeModulesDir": true
+}
