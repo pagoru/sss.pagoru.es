@@ -3096,16 +3096,31 @@ var import_random_seed = __toESM(require_random_seed());
 var import_sha = __toESM(require_sha2());
 var DEFAULT_CHARACTER_SET =
   "ABCDFGHIJKLMNOPQRSTUVWXYZabdfghijklmnopqrstuvwxyz1234567890";
+
+var UPDATED_CHARACTER_SET =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890*!#$&_@%";
+
 export const getHash = (text) =>
   (0, import_sha.default)("sha512").update(text).digest("hex");
 export const getPassword = (
   password,
   service,
+  version,
   length = 12,
   alphabet = DEFAULT_CHARACTER_SET,
 ) => {
   let generatedPassword = "";
-  const hexadecimalSeed = getHash(password + getHash(service));
+  if (version === 1) {
+    const hexadecimalSeed = getHash(password + getHash(service));
+    const random = import_random_seed.default.create(hexadecimalSeed);
+    for (let i = 0; i < length; i++)
+      generatedPassword += alphabet[random(alphabet.length)];
+    return generatedPassword;
+  }
+  length = 16;
+  alphabet = UPDATED_CHARACTER_SET;
+
+  const hexadecimalSeed = getHash(password + getHash(service) + version);
   const random = import_random_seed.default.create(hexadecimalSeed);
   for (let i = 0; i < length; i++)
     generatedPassword += alphabet[random(alphabet.length)];
